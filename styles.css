@@ -1,0 +1,41 @@
+:root{
+  --bg:#f5f7fb; --card:#fff; --accent:#4c6ef5; --muted:#65748b;
+}
+*{box-sizing:border-box;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+body{margin:0;background:var(--bg);color:#222}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:linear-gradient(90deg,var(--accent),#2b6df6);color:#fff}
+.topbar .brand{font-weight:700;font-size:18px}
+.container{display:flex;min-height:calc(100vh-56px)}
+.sidebar{width:180px;background:#fff;border-right:1px solid #eee;padding:18px}
+.sidebar nav a{display:block;padding:10px;border-radius:6px;color:var(--muted);text-decoration:none;margin-bottom:6px}
+.sidebar nav a.active, .sidebar nav a:hover{background:#f0f4ff;color:var(--accent);font-weight:600}
+.content{flex:1;padding:18px}
+.view{display:none}
+.view.active{display:block}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.card{background:var(--card);padding:16px;border-radius:8px;box-shadow:0 1px 4px rgba(10,10,15,.05)}
+.card h3{margin:0;color:var(--accent)}
+.list{margin-top:12px;background:var(--card);padding:12px;border-radius:8px;min-height:120px}
+.pos{display:flex;gap:12px}
+.pos-left{flex:2}
+.pos-right{width:360px;background:var(--card);padding:12px;border-radius:8px}
+.pos-products{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.product-card{background:#fff;padding:10px;border-radius:8px;cursor:pointer;border:1px solid #eee}
+.cart-list .cart-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #eee}
+.cart-summary{margin-top:10px;padding-top:10px}
+.btn{background:#fff;border:1px solid #ddd;padding:8px 10px;border-radius:6px;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff;border:none}
+.btn:not(.primary):hover{box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.toolbar{display:flex;gap:8px;align-items:center;padding-bottom:8px}
+input,select{padding:8px;border-radius:6px;border:1px solid #ddd}
+.footer{padding:12px;text-align:center;color:var(--muted)}
+.modal{position:fixed;inset:0;display:none;background:rgba(0,0,0,.35);align-items:center;justify-content:center}
+.modal .modal-body{background:#fff;padding:18px;border-radius:10px;width:320px}
+.modal.active{display:flex}
+.modal-actions{text-align:right;margin-top:10px}
+@media(max-width:900px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .sidebar{display:none}
+  .pos-right{width:48%}
+  .pos{flex-direction:column}
+}
